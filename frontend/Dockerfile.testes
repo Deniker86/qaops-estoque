@@ -1,0 +1,7 @@
+FROM cypress/included:14.5.2
+
+WORKDIR /e2e
+
+COPY . .
+
+CMD sh -c "npx wait-on http://frontend-qaops:3000 && npx cypress run --browser chrome --headless"

@@ -1,0 +1,62 @@
+services:
+  backend:
+    build: ./backend
+    container_name: backend-qaops
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    working_dir: /app
+    command: flask run --host=0.0.0.0 --port=5000
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-qaops
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  testes-back:
+    build: ./backend
+    container_name: testes-back
+    volumes:
+      - ./tests:/tests
+    working_dir: /tests
+    command: pytest test_api.py
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - API_URL=http://backend-qaops:5000
+
+  testes-front:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.testes
+    container_name: testes-front
+    working_dir: /e2e
+    volumes:
+      - ./frontend:/e2e
+    command: sh -c "npx wait-on http://frontend-qaops:3000 && npx cypress run --browser chrome --headless --config video=true"
+    depends_on:
+      frontend:
+        condition: service_started
