@@ -6,99 +6,117 @@ Este é um projeto de portfólio com foco em \*\*QAOps\*\*, demonstrando um flux
 
 
 
+---
+
+
+
 \## 🚀 Tecnologias e Ferramentas
 
 
 
-\- \*\*Backend\*\*: Python (Flask)
+\* \*\*Backend\*\*: Python (Flask)
 
-\- \*\*Frontend\*\*: React
+\* \*\*Frontend\*\*: React
 
-\- \*\*Testes Frontend\*\*: Cypress
+\* \*\*Testes Frontend\*\*: Cypress
 
-\- \*\*Testes Backend\*\*: Pytest
+\* \*\*Testes Backend\*\*: Pytest
 
-\- \*\*Docker \& Docker Compose\*\*
+\* \*\*Docker \& Docker Compose\*\*
 
-\- \*\*Git \& GitHub\*\*
-
-
-
-\## 📦 Como executar o projeto
+\* \*\*Git \& GitHub\*\*
 
 
 
-1\. Clone este repositório:
+---
 
 
 
-```bash
-
-git clone https://github.com/Deniker86/qaops-estoque.git
-
-cd qaops-estoque
-
-Suba os serviços com Docker:
+\## 📦 Como Executar o Projeto
 
 
 
-bash
-
-Copiar
-
-Editar
-
-docker-compose up --build
-
-Isso irá iniciar:
+Siga os passos abaixo para colocar o projeto em funcionamento:
 
 
 
-O backend Flask na porta 5000
+1\.  \*\*Clone este repositório:\*\*
+
+&nbsp;   ```bash
+
+&nbsp;   git clone \[https://github.com/Deniker86/qaops-estoque.git](https://github.com/Deniker86/qaops-estoque.git)
+
+&nbsp;   cd qaops-estoque
+
+&nbsp;   ```
 
 
 
-O frontend React na porta 3000
+2\.  \*\*Suba os serviços com Docker:\*\*
+
+&nbsp;   ```bash
+
+&nbsp;   docker-compose up --build
+
+&nbsp;   ```
 
 
 
-Os testes automatizados (Cypress e Pytest)
+&nbsp;   Este comando irá iniciar os seguintes serviços:
 
 
 
-Aguarde até que todos os testes sejam executados automaticamente.
+&nbsp;   \* O \*\*backend Flask\*\* na porta `5000`
+
+&nbsp;   \* O \*\*frontend React\*\* na porta `3000`
+
+&nbsp;   \* Os \*\*testes automatizados\*\* (Cypress e Pytest)
 
 
 
-🧪 Testes Automatizados
-
-Frontend (Cypress)
-
-Os testes E2E são executados automaticamente assim que o frontend estiver disponível. Eles verificam:
+&nbsp;   Aguarde até que todos os testes sejam executados automaticamente.
 
 
 
-Acessibilidade da página
+---
 
 
 
-Funcionalidade de cadastro, edição e remoção de produtos
+\## 🧪 Testes Automatizados
 
 
 
-Backend (Pytest)
+\### Frontend (Cypress)
+
+
+
+Os testes E2E (End-to-End) são executados automaticamente assim que o frontend estiver disponível. Eles verificam:
+
+
+
+\* Acessibilidade da página
+
+\* Funcionalidade de cadastro, edição e remoção de produtos
+
+
+
+\### Backend (Pytest)
+
+
 
 Testes unitários e de integração são executados assim que o serviço do backend for iniciado.
 
 
 
-📁 Estrutura do Projeto
+---
 
-bash
 
-Copiar
 
-Editar
+\## 📁 Estrutura do Projeto
+
+
+
+```bash
 
 qaops-estoque/
 
@@ -119,26 +137,4 @@ qaops-estoque/
 ├── docker-compose.yml # Orquestração dos serviços
 
 └── README.md
-
-🎯 Objetivos do Projeto
-
-Automatizar todo o fluxo de QA com foco em integração contínua
-
-
-
-Simular um ambiente real de desenvolvimento colaborativo
-
-
-
-Aprender boas práticas modernas com Docker, Git e automação de testes
-
-
-
-👨‍💻 Autor
-
-Deniker Pires
-
-
-
-Projeto feito com dedicação para estudos e portfólio.
 
