@@ -38,17 +38,17 @@ git clone https://github.com/Deniker86/qaops-estoque.git
 
 cd qaops-estoque
 
+Suba os serviços com Docker:
 
 
 
+bash
 
-2\. Suba os serviços com Docker:
+Copiar
 
-
+Editar
 
 docker-compose up --build
-
-
 
 Isso irá iniciar:
 
@@ -67,10 +67,6 @@ Os testes automatizados (Cypress e Pytest)
 
 
 Aguarde até que todos os testes sejam executados automaticamente.
-
-
-
-
 
 
 
@@ -98,7 +94,11 @@ Testes unitários e de integração são executados assim que o serviço do back
 
 📁 Estrutura do Projeto
 
+bash
 
+Copiar
+
+Editar
 
 qaops-estoque/
 
@@ -120,10 +120,6 @@ qaops-estoque/
 
 └── README.md
 
-
-
-
-
 🎯 Objetivos do Projeto
 
 Automatizar todo o fluxo de QA com foco em integração contínua
@@ -141,6 +137,8 @@ Aprender boas práticas modernas com Docker, Git e automação de testes
 👨‍💻 Autor
 
 Deniker Pires
+
+
 
 Projeto feito com dedicação para estudos e portfólio.
 
